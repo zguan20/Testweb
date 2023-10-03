@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p id="demo"></p>
 <script>
 function openZip() {
-  document.getElementById("zip").disabled = false;
-  var zz = document.getElementsByName("c");
+  var zz = document.getElementsByName("zip");
+  var text = document.getElementById("textzip");
   var zzz = [];
   for(var i=0;i<zz.length;i++){
-	  if (zz[i].checked == true){
-		zzz = zz[i].id;
+	  if (zz[i].checked != true){
+		continue;
 	  }
+	  if(zz[i].id=="other"){
+		
+		text.style.display = "block";
+	  }else{text.style.display = "none";}
   }
-  document.getElementById("zip").value = zzz;
 }
 </script>
+<p class="demo"></p>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
     <img src="https://xilin.org/wp-content/uploads/2017/03/xilin_logo_1.svg" class="center">
@@ -32,25 +35,57 @@ function openZip() {
       </div>
 
       <div class="formbold-input-group">
-        <label for="email" class="formbold-form-label"> 2. 能否告诉我们您的电话号码 </label>
+        <label for="tel" class="formbold-form-label"> 2. 能否告诉我们您的电话号码 </label>
         <input
-          type="email"
-          name="lastname"
-          id="email"
+          type="tel"
+          name="tel"
+          id="tel"
           placeholder="XXX-XXX-XXXX"
           class="formbold-form-input"
         />
       </div>
 
       <div class="formbold-input-group">
-        <label for="age" class="formbold-form-label"> 13. 您的性别： </label>
-        <input
-          type="text"
-          name="age"
-          id="age"
-          placeholder="-"
-          class="formbold-form-input"
-        />
+        <label for="gender" class="formbold-form-label"> 13. 您的性别： </label>
+        <div class="formbold-radio-flex">
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="gender"
+                id="male"
+              />
+              男
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="gender"
+                id="female"
+              />
+              女
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="gender"
+                id="gender_other"
+              />
+              其他
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+		</div>
       </div>
 
       <div class="formbold-input-group">
@@ -58,7 +93,7 @@ function openZip() {
           14. 您的年龄：
         </label>
 
-        <select class="formbold-form-select" name="occupation" id="occupation" onchange="myfunc()">
+        <select class="formbold-form-select" name="occupation" id="occupation">
           <option value="Student">20 岁至30岁</option>
           <option value="designer">31 岁至40岁</option>
           <option value="fullstack">41 岁至50岁</option>
@@ -80,56 +115,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans1"
-              />
-              Yes
-              <span class="formbold-radio-checkmark"></span>
-            </label>
-          </div>
-
-          <div class="formbold-radio-group">
-            <label class="formbold-radio-label">
-              <input
-                class="formbold-input-radio"
-                type="radio"
-                name="ans"
-                id="ans2"
-              />
-              No
-              <span class="formbold-radio-checkmark"></span>
-            </label>
-          </div>
-
-          <div class="formbold-radio-group">
-            <label class="formbold-radio-label">
-              <input
-                class="formbold-input-radio"
-                type="radio"
-                name="ans"
-                id="ans3"
-              />
-              60616
-              <span class="formbold-radio-checkmark"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="formbold-input-radio-wrapper">
-        <label class="formbold-form-label">
-          16. 请选择您所在地区的邮区编码:
-        </label>
-
-        <div class="formbold-radio-flex">
-          <div class="formbold-radio-group">
-            <label class="formbold-radio-label">
-              <input
-                class="formbold-input-radio"
-                type="radio"
-                name="c"
+                name="zip"
                 id="60616"
               />
               60616
@@ -142,7 +128,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60608"
 				onclick = "openZip()"
               />
@@ -156,7 +142,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60609"
 				onclick = "openZip()"
               />
@@ -170,7 +156,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60605"
 				onclick = "openZip()"
               />
@@ -184,7 +170,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60607"
 				onclick = "openZip()"
               />
@@ -198,7 +184,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60632"
 				onclick = "openZip()"
               />
@@ -212,7 +198,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60623"
 				onclick = "openZip()"
               />
@@ -226,7 +212,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="60629"
 				onclick = "openZip()"
               />
@@ -240,7 +226,7 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="c"
+                name="zip"
                 id="other"
 				onclick = "openZip()"
               />
@@ -248,9 +234,10 @@ function openZip() {
 			<input
 			  type="text"
 			  name="zip"
-			  id="zip"
+			  id="textzip"
 			  placeholder="zip"
 			  class="formbold-form-input"
+			  style="display:none"
 			/>
               <span class="formbold-radio-checkmark"></span>
 			  
