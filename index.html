@@ -16,12 +16,26 @@ function openZip() {
 	  }else{text.style.display = "none";}
   }
 }
+function getvalue(x) {
+  var zz = document.getElementsByName("ans"+x);
+  //var text = document.getElementById("textzip");
+  //var zzz = [];
+  for(var i=0;i<zz.length;i++){
+	  if (zz[i].checked != true){
+		continue;
+	  }
+	  return zz[i].value;
+  }
+}
+function testvalue(x){
+	console.log(getvalue(x));
+}
 </script>
 <p class="demo"></p>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
     <img src="https://xilin.org/wp-content/uploads/2017/03/xilin_logo_1.svg" class="center">
-	  <br><br><label > 感谢您选择我们的服务！请花一分钟时间，分享您的满意度。您的反馈对我们非常重要！</label><br><br>
+	  <br><br><label class="centertext"> 感谢您选择我们的服务！请花一分钟时间，分享您的满意度。您的反馈对我们非常重要！</label><br><br>
     <form method="POST">
       <div class="formbold-input-group">
         <label for="name" class="formbold-form-label"> 1. 能否告诉我们您的姓名 </label>
@@ -94,13 +108,14 @@ function openZip() {
         </label>
 
         <select class="formbold-form-select" name="occupation" id="occupation">
-          <option value="Student">20 岁至30岁</option>
-          <option value="designer">31 岁至40岁</option>
-          <option value="fullstack">41 岁至50岁</option>
-          <option value="frontend">51 岁至60岁</option>
-	  <option value="Student">61 岁至70岁</option>
-          <option value="designer">71 岁至80岁</option>
-          <option value="fullstack">81 或以上</option>
+		  <option value="" style="display: none;" disabled selected>选择您的年龄</option>
+          <option value="20-30">20 岁至30岁</option>
+          <option value="31-40">31 岁至40岁</option>
+          <option value="41-50">41 岁至50岁</option>
+          <option value="51-60">51 岁至60岁</option>
+		  <option value="61-70">61 岁至70岁</option>
+          <option value="71-80">71 岁至80岁</option>
+          <option value="81+">81 或以上</option>
         </select>
       </div>
 
@@ -258,8 +273,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans1"
+                name="ans6"
+                id="sat4"
+				value = "满意"
+				onchange = "testvalue(6)"
               />
               满意
               <span class="formbold-radio-checkmark"></span>
@@ -271,9 +288,11 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans2"
-              />
+                name="ans6"
+                id="s_sat4"
+				value = "基本满意"
+				onchange = "testvalue(6)"
+			  />              
               基本满意
               <span class="formbold-radio-checkmark"></span>
             </label>
@@ -284,8 +303,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans6"
+                id="nor4"
+				value = "一般"
+				onchange = "testvalue(6)"
               />
               一般
               <span class="formbold-radio-checkmark"></span>
@@ -297,8 +318,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans6"
+                id="s_unsat4"
+				value = "不太满意"
+				onchange = "testvalue(6)"
               />
               不太满意
               <span class="formbold-radio-checkmark"></span>
@@ -310,8 +333,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans6"
+                id="unsat4"
+				value = "不满意"
+				onchange = "testvalue(6)"
               />
               不满意
               <span class="formbold-radio-checkmark"></span>
@@ -331,8 +356,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans1"
+                name="ans7"
+                id="sat7"
+				value = "满意"
+				onchange = "testvalue(7)"
               />
               满意
               <span class="formbold-radio-checkmark"></span>
@@ -344,9 +371,11 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans2"
-              />
+                name="ans7"
+                id="s_sat4"
+				value = "基本满意"
+				onchange = "testvalue(7)"
+			  />              
               基本满意
               <span class="formbold-radio-checkmark"></span>
             </label>
@@ -357,8 +386,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans7"
+                id="nor4"
+				value = "一般"
+				onchange = "testvalue(7)"
               />
               一般
               <span class="formbold-radio-checkmark"></span>
@@ -370,8 +401,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans7"
+                id="s_unsat4"
+				value = "不太满意"
+				onchange = "testvalue(7)"
               />
               不太满意
               <span class="formbold-radio-checkmark"></span>
@@ -383,8 +416,10 @@ function openZip() {
               <input
                 class="formbold-input-radio"
                 type="radio"
-                name="ans"
-                id="ans3"
+                name="ans7"
+                id="unsat4"
+				value = "不满意"
+				onchange = "testvalue(7)"
               />
               不满意
               <span class="formbold-radio-checkmark"></span>
@@ -895,6 +930,12 @@ function openZip() {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+  .centertext {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 </style>
 </body>
